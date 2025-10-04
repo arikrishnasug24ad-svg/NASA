@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exoplanet Mass Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Exoplanet Mass Predictor</h1>
+
+    <div class="form">
+      <label>Orbital Period (days)
+        <input id="orbital_period" type="number" step="any" placeholder="Orbital Period Days">
+      </label>
+
+      <label>Semi-Major Axis
+        <input id="semi_major" type="number" step="any" placeholder="Orbit Semi-Major Axis">
+      </label>
+
+      <label>Eccentricity
+        <input id="eccentricity" type="number" step="any" placeholder="Eccentricity">
+      </label>
+
+      <label>Stellar Mass
+        <input id="stellar_mass" type="number" step="any" placeholder="Stellar Mass">
+      </label>
+
+      <label>Discovery Method
+        <select id="discovery_method">
+          <option value="Radial Velocity">Radial Velocity</option>
+          <option value="Transit">Transit</option>
+          <option value="Imaging">Imaging</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+
+      <label>Spectral Type
+        <input id="spectral_type" type="text" placeholder="e.g., G2 V">
+      </label>
+
+      <button id="predict">Predict Mass</button>
+
+      <div id="result" class="result"></div>
+    </div>
+
+    <p class="note">Note: Model is a baseline RandomForest trained on provided dataset.</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

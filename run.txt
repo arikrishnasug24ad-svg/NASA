@@ -1,0 +1,7 @@
+1.python src\train.py --data "d:\NASA\all_exoplanets_2021.csv" --outdir "d:\NASA\models"
+2.Test-Path 'd:\NASA\models\model.joblib'
+3.python predict_demo.py
+4.python src\app.py
+5.Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5000/predict `
+  -Body (@{ 'Orbital Period Days' = 10; 'Orbit Semi-Major Axis' = 0.05; 'Eccentricity' = 0; 'Stellar Mass' = 1.0; 'Discovery Method' = 'Transit'; 'Spectral Type' = 'G2 V' } | ConvertTo-Json) `
+  -ContentType 'application/json'
